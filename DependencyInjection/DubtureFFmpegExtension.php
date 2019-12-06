@@ -26,8 +26,10 @@ class DubtureFFmpegExtension extends Extension
 
         // Depending on the dependency injection version load the corresponding factories
         // The new setFactory method was introduced in 2.6 and the old way removed in 3.0
-        if (method_exists('Symfony\\Component\\DependencyInjection\\Definition', 'setFactory')) {
+        if (!method_exists('Symfony\\Component\\DependencyInjection\\Definition', 'setFactoryClass')) {
             $loader->load('factories.xml');
+        } elseif (method_exists('Symfony\\Component\\DependencyInjection\\Definition', 'setFactory')) {
+            $loader->load('factories-2.8.xml');
         } else {
             $loader->load('factories-2.3.xml');
         }

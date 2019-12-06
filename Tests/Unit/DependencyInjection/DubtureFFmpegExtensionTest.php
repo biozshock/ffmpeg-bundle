@@ -53,4 +53,14 @@ class DubtureFFmpegExtensionTest extends AbstractExtensionTestCase
     {
         $this->assertContainerBuilderHasService('dubture_ffmpeg.ffprobe', 'FFMpeg\FFProbe');
     }
+
+    public function testAfterLoadingTheFFMpegServiceExistsFQCN()
+    {
+        $this->assertContainerBuilderHasService('FFMpeg\FFMpeg', 'FFMpeg\FFMpeg');
+    }
+
+    public function testAfterLoadingTheFFProbeServiceExistsFQCN()
+    {
+        $this->assertContainerBuilderHasService('FFMpeg\FFProbe', 'FFMpeg\FFProbe');
+    }
 }

@@ -22,5 +22,8 @@
             </argument>
             <argument id="logger" type="service"/>
         </service>
+
+        <service id="FFMpeg\FFMpeg" alias="dubture_ffmpeg.ffmpeg" public="false"/>
+        <service id="FFMpeg\FFProbe" alias="dubture_ffmpeg.ffprobe" public="false"/>
     </services>
 </container>
