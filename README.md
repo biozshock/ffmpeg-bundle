@@ -12,7 +12,7 @@ exposing the library as a Symfony service.
 Require the bundle with composer:
 
 ```bash
-$ composer require pulse00/ffmpeg-bundle "^0.6"
+$ composer require pulse00/ffmpeg-bundle "^0.14"
 ```
 
 Composer will install the bundle to your project's ``vendor/pulse00/ffmpeg-bundle`` directory.
