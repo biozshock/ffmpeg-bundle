@@ -16,7 +16,7 @@ class DubtureFFmpegExtensionTest extends AbstractExtensionTestCase
     /**
      * {@inheritDoc}
      */
-    protected function getContainerExtensions()
+    protected function getContainerExtensions(): array
     {
         return array(
             new DubtureFFmpegExtension(),
@@ -26,7 +26,7 @@ class DubtureFFmpegExtensionTest extends AbstractExtensionTestCase
     /**
      * {@inheritDoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -36,7 +36,7 @@ class DubtureFFmpegExtensionTest extends AbstractExtensionTestCase
         ));
     }
 
-    public function testAfterLoadingTheCorrectParametersHaveBeenSet()
+    public function testAfterLoadingTheCorrectParametersHaveBeenSet(): void
     {
         $this->assertContainerBuilderHasParameter('dubture_ffmpeg.binary', '/usr/local/bin/ffmpeg');
         $this->assertContainerBuilderHasParameter('dubture_ffprobe.binary', '/usr/local/bin/ffprobe');
@@ -44,22 +44,22 @@ class DubtureFFmpegExtensionTest extends AbstractExtensionTestCase
         $this->assertContainerBuilderHasParameter('dubture_ffmpeg.threads_count', 4);
     }
 
-    public function testAfterLoadingTheFFMpegServiceExists()
+    public function testAfterLoadingTheFFMpegServiceExists(): void
     {
         $this->assertContainerBuilderHasService('dubture_ffmpeg.ffmpeg', 'FFMpeg\FFMpeg');
     }
 
-    public function testAfterLoadingTheFFProbeServiceExists()
+    public function testAfterLoadingTheFFProbeServiceExists(): void
     {
         $this->assertContainerBuilderHasService('dubture_ffmpeg.ffprobe', 'FFMpeg\FFProbe');
     }
 
-    public function testAfterLoadingTheFFMpegServiceExistsFQCN()
+    public function testAfterLoadingTheFFMpegServiceExistsFQCN(): void
     {
         $this->assertContainerBuilderHasService('FFMpeg\FFMpeg', 'FFMpeg\FFMpeg');
     }
 
-    public function testAfterLoadingTheFFProbeServiceExistsFQCN()
+    public function testAfterLoadingTheFFProbeServiceExistsFQCN(): void
     {
         $this->assertContainerBuilderHasService('FFMpeg\FFProbe', 'FFMpeg\FFProbe');
     }
